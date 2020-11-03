@@ -12,6 +12,9 @@ app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(express.json());
 
+//routes
+app.use('/api/movies/', require('./routes/movie.routes'));
+
 //static files
 app.use(express.static(path.join(__dirname, 'public')))
 
