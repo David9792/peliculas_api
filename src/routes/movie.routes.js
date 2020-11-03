@@ -67,7 +67,7 @@ router.post('/upload-cover-photo/:id', async (req, res) => {
             //Use the mv() method to place the file in upload directory (i.e. "uploads")
             cover_photo.mv('./uploads/cover-photos/' + cover_photo.name);
 
-            Movie.update({_id: req.params.id}, {
+            Movie.updateOne({_id: req.params.id}, {
                 cover_photo: cover_photo.name,
             }, function (err, affected, resp) {
                 console.log(resp);
@@ -103,7 +103,7 @@ router.post('/upload-main-photo/:id', async (req, res) => {
             //Use the mv() method to place the file in upload directory (i.e. "uploads")
             main_photo.mv('./uploads/main-photos/' + main_photo.name);
 
-            Movie.update({_id: req.params.id}, {
+            Movie.updateOne({_id: req.params.id}, {
                 main_photo: main_photo.name,
             }, function (err, affected, resp) {
                 console.log(resp);

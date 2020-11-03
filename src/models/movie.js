@@ -8,7 +8,7 @@ const MovieSchema = new Schema({
     main_photo: {type: String, required: false},
     synopsis: {type: String, required: true},
     language: {type: String, required: true},
-    rating: {type: Number, required: true},
+    rating: {type: Number, required: true, min: 0, max: 5},
     list_servers: {type: [String], required: false},
 }, {
     timestamps: true
